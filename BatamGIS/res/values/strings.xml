@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BatamGIS</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_search">Cari</string>
+    
+    <string name="title_search">Cari Industri</string>
+    <string name="detail_search">Detail Industri</string>
+    <string name="view_map">Tampil Peta</string>
+    <string name="geo_location">Lokasi Industri</string>
+    
+    <string name="nama">Nama</string>
+    <string name="alamat">Alamat</string>
+    <string name="lat">Latitude</string>
+    <string name="lng">Longitude</string>
+    <string name="kategori">Kategori</string>
+    <string name="telp">Telepon</string>
+    <string name="sp">:</string>
+    
+
+</resources>
