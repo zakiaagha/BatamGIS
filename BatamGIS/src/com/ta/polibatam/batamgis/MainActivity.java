@@ -33,7 +33,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
 	
-    @SuppressLint("SetJavaScriptEnabled") 
+    @SuppressLint({ "SetJavaScriptEnabled", "InlinedApi" }) 
     private void openBrowser()
     {
         

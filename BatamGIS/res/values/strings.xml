@@ -12,8 +12,8 @@
     
     <string name="nama">Nama</string>
     <string name="alamat">Alamat</string>
-    <string name="lat">Latitude</string>
-    <string name="lng">Longitude</string>
+    <string name="lat">Latitude  </string>
+    <string name="lng">Longitude  </string>
     <string name="kategori">Kategori</string>
     <string name="telp">Telepon</string>
     <string name="sp">:</string>

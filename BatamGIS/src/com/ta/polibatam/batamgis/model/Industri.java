@@ -1,13 +1,13 @@
 package com.ta.polibatam.batamgis.model;
 
 public class Industri {
-	 	private String nama;
-	    private String alamat;
-	    private Double lat;
-	    private Double lng;
-	    private String kategori;
-	    private String telp;
-	    private String image;
+	public String nama;
+	public String alamat;
+	public Double lat;
+	public Double lng;
+	public String kategori;
+	public String telp;
+	public String image;
 
 
 	    public Industri(String nama, String alamat, Double lat, Double lng, String image) {

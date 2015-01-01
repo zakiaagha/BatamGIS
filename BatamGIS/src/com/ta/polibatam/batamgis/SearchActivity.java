@@ -22,7 +22,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
-import android.widget.Filterable;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -44,7 +43,6 @@ public class SearchActivity extends ListActivity {
 	private static final String TAG_LAT = "lat";
 	private static final String TAG_LNG = "lng";
 	private static final String TAG_KATEGORI = "kategori";
-	private static final String TAG_TELP = "telp";
 	private static final String TAG_IMAGE = "image";
 	
 	EditText mEditText;
@@ -88,8 +86,6 @@ public class SearchActivity extends ListActivity {
 						.getText().toString();
 				String kategori = ((TextView) view.findViewById(R.id.txt_kategori))
 						.getText().toString();
-				String telp = ((TextView) view.findViewById(R.id.txt_telp))
-						.getText().toString();
 				String image = ((TextView) view.findViewById(R.id.txt_image))
 						.getText().toString();
 
@@ -101,7 +97,6 @@ public class SearchActivity extends ListActivity {
 				in.putExtra(TAG_LAT, lat);
 				in.putExtra(TAG_LNG, lng);
 				in.putExtra(TAG_KATEGORI, kategori);
-				in.putExtra(TAG_TELP, telp);
 				in.putExtra(TAG_IMAGE, image);
 				startActivity(in);
 
@@ -174,7 +169,6 @@ public class SearchActivity extends ListActivity {
 						String lat = c.getString(TAG_LAT);
 						String lng = c.getString(TAG_LNG);
 						String kategori = c.getString(TAG_KATEGORI);
-						String telp = c.getString(TAG_TELP);
 						String image = c.getString(TAG_IMAGE);
 
 						// tmp hashmap for single contact
@@ -186,7 +180,6 @@ public class SearchActivity extends ListActivity {
 						industri.put(TAG_LAT, lat);
 						industri.put(TAG_LNG, lng);
 						industri.put(TAG_KATEGORI, kategori);
-						industri.put(TAG_TELP, telp);
 						industri.put(TAG_IMAGE, image);
 
 						// adding contact to contact list
@@ -213,8 +206,8 @@ public class SearchActivity extends ListActivity {
 			 * */ 
 			ListAdapter adapter = new SimpleAdapter(
 					SearchActivity.this, industriList,
-					R.layout.list_item, new String[] { TAG_NAMA, TAG_ALAMAT, TAG_LAT, TAG_LNG, TAG_KATEGORI, TAG_TELP, TAG_IMAGE}, 
-					new int[] { R.id.txt_nama, R.id.txt_alamat, R.id.txt_lat, R.id.txt_lng, R.id.txt_kategori, R.id.txt_telp, R.id.txt_image});
+					R.layout.list_item, new String[] { TAG_NAMA, TAG_ALAMAT, TAG_LAT, TAG_LNG, TAG_KATEGORI, TAG_IMAGE}, 
+					new int[] { R.id.txt_nama, R.id.txt_alamat, R.id.txt_lat, R.id.txt_lng, R.id.txt_kategori, R.id.txt_image});
 
 			setListAdapter(adapter);
 		}

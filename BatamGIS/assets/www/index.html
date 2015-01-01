@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript">
+      function init() {
+
+      	var i_lat = java2JSAgentVar.getNameLat();
+    	var i_long = java2JSAgentVar.getNameLng();
+    	var i_latitude = parseFloat(i_lat);
+    	var i_longitude = parseFloat(i_long);
+
+        map = new OpenLayers.Map("mapdiv");
+        var mapnik = new OpenLayers.Layer.OSM();
+        map.addLayer(mapnik);
+
+        var bounds = new OpenLayers.Bounds(
+                    103.88943658903702, 0.9680605034743621,
+                    104.15031077055329, 1.1995421846569343
+                );
+                var options = {
+                    controls: [],
+                    maxExtent: bounds,
+                    maxResolution: 0.0010190397715479,
+                    projection: "EPSG:4326",
+                    units: 'degrees'
+                };
+
+        var lonlat = new OpenLayers.LonLat(i_longitude, i_latitude).transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator
+          );
+
+        var zoom = 13;
+
+        var markers = new OpenLayers.Layer.Markers( "Markers" );
+        map.addLayer(markers);
+        markers.addMarker(new OpenLayers.Marker(lonlat));
+        map.zoomToExtent(bounds);
+        map.setCenter(lonlat, zoom);
+      }
+    </script>
+	
+    <style>
+    #mapdiv { width:465px; height:765px; }
+    div.olControlAttribution { bottom:3px; }
+    </style>
+
+</head>
+
+<body onload="init();">
+    <div id="mapdiv"></div>
+</body>
+</html>
